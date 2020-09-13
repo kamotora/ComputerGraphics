@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane layoutX="810.0" layoutY="0.0" prefHeight="610.0" prefWidth="260.0" style="-fx-background-color: PaleGoldenrod;">
+         <children>
+            <CheckBox fx:id="isRandomColorCheckBox" layoutX="4.0" layoutY="2" mnemonicParsing="false" selected="false" text="Ранд. цвет линий и кругов" />
+            <Label layoutX="4.0" layoutY="30.0" text="Кол-во точек:" />
+            <TextField fx:id="pointNoiseField" layoutX="160.0" layoutY="25.0" prefHeight="20.0" prefWidth="80.0" text="1500" />
+            <Label layoutX="4.0" layoutY="60.0" text="Кол-во линий:" />
+            <TextField fx:id="lineNoiseField" layoutX="160.0" layoutY="52.0" prefHeight="20.0" prefWidth="80.0" text="5" />
+            <Label layoutX="4.0" layoutY="90.0" text="Кол-во окружностей:" />
+            <TextField fx:id="okrNoiseField" layoutX="160.0" layoutY="80.0" prefHeight="20.0" prefWidth="80.0" text="5" />
+             <Button layoutX="4.0" layoutY="110.0" mnemonicParsing="false" onAction="#noise" prefHeight="15.0" prefWidth="236.0" text="Зашумить" />
+
+
+            <Label layoutX="4.0" layoutY="140.0" text="Размерность ядра:" />
+            <TextField fx:id="nField" layoutX="155.0" layoutY="138.0" prefHeight="26.0" prefWidth="39.0" text="3" />
+            <Label layoutX="200.0" layoutY="140.0" text="x" />
+            <TextField fx:id="mField" layoutX="215.0" layoutY="138.0" prefHeight="26.0" prefWidth="39.0" text="3" />
+             <Button layoutX="4.0" layoutY="165.0" mnemonicParsing="false" onAction="#GaussFilter" prefHeight="26.0" prefWidth="236.0" text="Фильтр Гаусса" />
+             <Button layoutX="4.0" layoutY="195.0" mnemonicParsing="false" onAction="#MedianFilter" prefHeight="20.0" prefWidth="236.0" text="Фильтр медианы" />
+
+            <Label layoutX="5.0" layoutY="250.0" text="Размерность ядра:" />
+            <TextField fx:id="nFieldRezk" layoutX="160.0" layoutY="240.0" prefHeight="26.0" prefWidth="39.0" text="3" />
+            <Label layoutX="201.0" layoutY="250.0" text="x" />
+            <TextField fx:id="mFieldRezk" layoutX="216.0" layoutY="240.0" prefHeight="26.0" prefWidth="39.0" text="3" />
+            <Label layoutX="5.0" layoutY="277.0" text="Степень увел.резкости k" />
+            <TextField fx:id="powerRezkField" layoutX="197.0" layoutY="272.0" prefHeight="26.0" prefWidth="39.0" text="3" />
+            <Button layoutX="4.0" layoutY="305.0" mnemonicParsing="false" onAction="#addRezkost" prefHeight="26.0" prefWidth="236.0" text="Увеличение резкости" />
+
+            <Button layoutX="4.0" layoutY="364.0" mnemonicParsing="false" onAction="#findBounds" prefHeight="26.0" prefWidth="236.0" text="Поиск границ" />
+            <!--
+            <RadioButton fx:id="isSobelRB" layoutX="4.0" layoutY="400.0" mnemonicParsing="false" selected="true" text="Собель">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="isLaplasRB" layoutX="104.0" layoutY="400.0" mnemonicParsing="false" text="Лапласиан" toggleGroup="$group" />
+            -->
+            <Button layoutX="4.0" layoutY="444.0" mnemonicParsing="false" onAction="#Tisnenie" prefHeight="26.0" prefWidth="236.0" text="Тиснение" />
+
+            <Button layoutX="4.0" layoutY="484.0" mnemonicParsing="false" onAction="#loadImage" prefHeight="20.0" prefWidth="236.0" text="Перезагрузить изображение" />
+         </children>
+      </Pane>
+      <Canvas fx:id="canvas" height="600.0" layoutX="4.0" layoutY="4.0" width="800.0" />
+   </children>
+</AnchorPane>

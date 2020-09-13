@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane layoutX="810.0" layoutY="0.0" prefHeight="610.0" prefWidth="260.0" style="-fx-background-color: PaleGoldenrod;">
+         <children>
+            <Button layoutX="4.0" layoutY="424.0" mnemonicParsing="false" onAction="#loadImage" prefHeight="20.0" prefWidth="236.0" text="Перезагрузить изображение" />
+            <Label layoutX="4.0" layoutY="33.0" text="Яркость:" />
+            <Button onAction="#addBright" layoutX="117.0" layoutY="21.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="+" />
+            <Button onAction="#subBright" layoutX="183.0" layoutY="21.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="-" />
+
+             <Label layoutX="4.0" layoutY="83.0" text="Контрастность:" />
+             <Button onAction="#addConstrast" layoutX="117.0" layoutY="71.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="+" />
+             <Button onAction="#subConstrast" layoutX="183.0" layoutY="71.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="-" />
+             <Button onAction="#negative" layoutX="4.0" layoutY="121.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="236.0" text="Негатив" />
+             <Button onAction="#gray" layoutX="4.0" layoutY="161.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="236.0" text="Оттенки серого" />
+             <Button onAction="#BW" layoutX="4.0" layoutY="201.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="236.0" text="Бинаризация" />
+            <Label layoutX="4.0" layoutY="242.0" text="Показать гистограмму:" />
+             <Button onAction="#showRedHist" layoutX="4.0" layoutY="262.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0" text="Red" />
+             <Button onAction="#showGreenHist" layoutX="74.0" layoutY="262.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0" text="Green" />
+             <Button onAction="#showBlueHist" layoutX="144.0" layoutY="262.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0" text="Blue" />
+             <Button onAction="#showBrightHist" layoutX="4.0" layoutY="292.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Яркость" />
+         </children>
+      </Pane>
+      <Canvas fx:id="canvas" height="600.0" layoutX="4.0" layoutY="4.0" width="800.0" />
+   </children>
+</AnchorPane>

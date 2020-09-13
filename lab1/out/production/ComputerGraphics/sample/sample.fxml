@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane layoutX="632.0" prefHeight="593.0" prefWidth="212.0" style="-fx-background-color: gray;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Повороты вокруг:" />
+            <Label layoutX="30.0" layoutY="38.0" text="Х на " />
+            <TextField fx:id="angleX" layoutX="64.0" layoutY="33.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+            <Button layoutX="157.0" layoutY="33.0" mnemonicParsing="false" onAction="#rotateX_Action" prefHeight="26.0" prefWidth="41.0" text="ОК" />
+
+             <Label layoutX="30.0" layoutY="68.0" text="Y на " />
+             <TextField fx:id="angleY" layoutX="64.0" layoutY="63.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+             <Button layoutX="157.0" layoutY="63.0" mnemonicParsing="false" onAction="#rotateY_Action" prefHeight="26.0" prefWidth="41.0" text="ОК" />
+
+             <Label layoutX="30.0" layoutY="98.0" text="Z на " />
+             <TextField fx:id="angleZ" layoutX="64.0" layoutY="93.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+             <Button layoutX="157.0" layoutY="93.0" mnemonicParsing="false" onAction="#rotateZ_Action" prefHeight="26.0" prefWidth="41.0" text="ОК" />
+
+             <Label layoutX="14.0" layoutY="124.0" text="Масштабирование:" />
+             <Label layoutX="30.0" layoutY="148.0" text="Х " />
+             <TextField fx:id="scaleX" layoutX="64.0" layoutY="143.0" prefHeight="26.0" prefWidth="87.0" text="1.0" />
+
+             <Label layoutX="30.0" layoutY="178.0" text="Y " />
+             <TextField fx:id="scaleY" layoutX="64.0" layoutY="173.0" prefHeight="26.0" prefWidth="87.0" text="1.0" />
+
+             <Label layoutX="30.0" layoutY="208.0" text="Z " />
+             <TextField fx:id="scaleZ" layoutX="64.0" layoutY="203.0" prefHeight="26.0" prefWidth="87.0" text="1.0" />
+            <Button layoutX="11.0" layoutY="237.0" mnemonicParsing="false" onAction="#scaleAction" prefHeight="26.0" prefWidth="195.0" text="OK" />
+
+             <Label layoutX="14.0" layoutY="274.0" text="Перемещение:" />
+             <Label layoutX="30.0" layoutY="298.0" text="Х " />
+             <TextField fx:id="moveX" layoutX="64.0" layoutY="293.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+
+             <Label layoutX="30.0" layoutY="328.0" text="Y " />
+             <TextField fx:id="moveY" layoutX="64.0" layoutY="323.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+
+             <Label layoutX="30.0" layoutY="358.0" text="Z " />
+             <TextField fx:id="moveZ" layoutX="64.0" layoutY="353.0" prefHeight="26.0" prefWidth="87.0" text="0.0" />
+             <Button layoutX="11.0" layoutY="387.0" mnemonicParsing="false" onAction="#moveAction" prefHeight="26.0" prefWidth="195.0" text="OK" />
+
+             <Label layoutX="14.0" layoutY="424.0" text="Проецирование:" />
+            <Group layoutX="30.0" layoutY="447.0">
+               <children>
+                  <RadioButton fx:id="perspectiveRB" mnemonicParsing="false" onAction="#perChecked" text="Перспективнное" />
+                   <RadioButton fx:id="simpleRB" layoutY="30.0" mnemonicParsing="false" onAction="#simpleChecked" selected="true" text="Косоугольное" />
+               </children>
+            </Group>
+             <Label layoutX="14.0" layoutY="504.0" text="Отражение:" />
+            <Button layoutX="16.0" layoutY="520.0" mnemonicParsing="false" onAction="#reflectX_Action" text="X" />
+            <Button layoutX="57.0" layoutY="520.0" mnemonicParsing="false" onAction="#reflectY_Action" text="Y" />
+            <Button layoutX="95.0" layoutY="520.0" mnemonicParsing="false" onAction="#reflectZ_Action" text="Z" />
+            <Button fx:id="animateButton" layoutX="18.0" layoutY="555.0" mnemonicParsing="false" onAction="#animate" text="Анимация" />
+            <Button fx:id="stopAnimateButton" layoutX="115.0" layoutY="555.0" mnemonicParsing="false" text="Стоп" />
+         </children>
+      </Pane>
+      <Pane prefHeight="560.0" prefWidth="630.0">
+         <children>
+            <Group fx:id="drawGroup">
+               <children>
+                  <Group />
+                  <Group layoutX="14.0" layoutY="530.0">
+                     <children>
+                        <Label text="Координаты:" />
+                        <Label fx:id="curCoordLabel" layoutX="97.0" />
+                         <Label layoutY="20.0" text="Поворот:" />
+                         <Label fx:id="curAngleLabel" layoutX="97.0" layoutY="20.0" />
+                         <Label layoutY="40.0" text="Масштаб:" />
+                         <Label fx:id="curScaleLabel" layoutX="97.0" layoutY="40.0" />
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+            <Group fx:id="group" layoutX="104.0" layoutY="122.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
